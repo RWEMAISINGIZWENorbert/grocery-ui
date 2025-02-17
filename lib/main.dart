@@ -32,6 +32,11 @@ class MyApp extends StatelessWidget {
             color: const Color.fromARGB(255, 7, 18, 34),
             fontWeight: FontWeight.w600
           ),
+          displayLarge:  GoogleFonts.poppins(
+            color: const Color.fromARGB(255, 19, 48, 92),
+            fontSize: 18,
+            fontWeight: FontWeight.w600
+          ),
         ),
       ),
       home: const MyHomePage(),
