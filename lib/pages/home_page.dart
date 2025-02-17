@@ -12,7 +12,7 @@ class MyHomePage extends StatelessWidget {
     List<ProductsModel> products = ProductsModel.initProducts();
     return Scaffold(
       body: Container(
-        height: MediaQuery.of(context).size.height * 0.78,
+        height: MediaQuery.of(context).size.height * 0.9,
         // width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
             color: Colors.white,
@@ -114,7 +114,7 @@ class MyHomePage extends StatelessWidget {
                           itemBuilder: (context, index) {
                             return GestureDetector(
                               onTap: (){
-                                Navigator.pushNamed(context, '/item');
+                                Navigator.pushNamed(context, '/item', arguments: index);
                               },
                               child: Container(
                                 // height: MediaQuery.of(context).size.height * 0.5,
@@ -234,7 +234,7 @@ class MyHomePage extends StatelessWidget {
 
 Container _bottomBar1(context){
   return Container(
-    margin: EdgeInsets.only(top: 16, left: 8, right: 8),
+    margin: EdgeInsets.only(top: 20, left: 8, right: 8),
     height: MediaQuery.of(context).size.height * 0.2,
     child: Row(
      mainAxisAlignment: MainAxisAlignment.spaceBetween,
