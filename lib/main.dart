@@ -16,10 +16,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 119, 79, 189)),
-        scaffoldBackgroundColor: Colors.grey[300],
-        bottomNavigationBarTheme: BottomNavigationBarThemeData(
-          backgroundColor: const Color.fromARGB(255, 19, 48, 92),
-        ),
+        // scaffoldBackgroundColor: Colors.grey[300],
+        scaffoldBackgroundColor: const Color.fromARGB(255, 12, 31, 59),
+        // bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        //   backgroundColor: const Color.fromARGB(255, 19, 48, 92),
+        // ),
         useMaterial3: true,
         textTheme: TextTheme(
           displayMedium: GoogleFonts.poppins(

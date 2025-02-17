@@ -12,13 +12,13 @@ class MyHomePage extends StatelessWidget {
     List<ProductsModel> products = ProductsModel.initProducts();
     return Scaffold(
       body: Container(
-        height: MediaQuery.of(context).size.height * 0.9,
+        height: MediaQuery.of(context).size.height * 0.78,
         // width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(20),
-              bottomRight: Radius.circular(20),
+              bottomLeft: Radius.circular(30),
+              bottomRight: Radius.circular(30),
             )),
         child: Column(
           children: [
@@ -207,19 +207,69 @@ class MyHomePage extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: _bottomBar(),
+      bottomNavigationBar: _bottomBar1(context),
     );
   }
 
   BottomNavigationBar _bottomBar() {
     return BottomNavigationBar(
+      currentIndex: 0,
+      onTap: (index){},
       items: [
         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-        BottomNavigationBarItem(
-            icon: Icon(Icons.production_quantity_limits_sharp), label: 'Order'),
+        BottomNavigationBarItem(icon: Icon(Icons.production_quantity_limits_sharp), label: 'Order'),
         BottomNavigationBarItem(icon: Icon(Icons.car_crash), label: 'Cart'),
         BottomNavigationBarItem(icon: Icon(Icons.dashboard), label: 'more'),
       ],
     );
   }
+}
+
+Container _bottomBar1(context){
+  return Container(
+    margin: EdgeInsets.only(top: 16, left: 8, right: 8),
+    height: MediaQuery.of(context).size.height * 0.2,
+    child: Row(
+     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+     children: [
+          Column(
+            children: [
+              Icon(Icons.home, color: Colors.white,size: 24,),
+              Text('Home', style: GoogleFonts.poppins(
+                color: Colors.white,
+                fontSize: 18
+              ),
+              )
+            ],
+          ),
+          Column(
+            children: [
+              Icon(Icons.production_quantity_limits_sharp, color: Colors.white,size: 24,),
+              Text('Order', style: GoogleFonts.poppins(
+                color: Colors.white,
+                fontSize: 18
+              ),)
+            ],
+          ),
+          Column(
+            children: [
+              Icon(Icons.car_crash, color: Colors.white,size: 24,),
+              Text('Cart', style: GoogleFonts.poppins(
+                color: Colors.white,
+                fontSize: 18
+              ),)
+            ],
+          ),
+          Column(
+            children: [
+              Icon(Icons.dashboard, color: Colors.white,size: 24,),
+              Text('more', style: GoogleFonts.poppins(
+                color: Colors.white,
+                fontSize: 18
+              ),)
+            ],
+          ),
+     ],
+    ),
+  );
 }
