@@ -1,6 +1,3 @@
-
-import 'dart:ui_web';
-
 class ProductsModel {
   final String name;
   final String desc;

@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -9,7 +7,7 @@ class MyItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
      
-         final productId = ModalRoute.of(context)!.settings.arguments as String;
+        //  final productId = ModalRoute.of(context)!.settings.arguments as String;
 
     
     return Scaffold(
@@ -55,7 +53,7 @@ class MyItem extends StatelessWidget {
                 children: [
                   RichText(text: TextSpan(
                      children: [
-                      TextSpan(text: 'Fresh Apple\n $productId', style: Theme.of(context).textTheme.displayMedium),
+                      TextSpan(text: 'Fresh Apple\n ', style: Theme.of(context).textTheme.displayMedium),
                       TextSpan(text: 'Available in stock', style:  GoogleFonts.poppins( color: Colors.grey[500],  fontWeight: FontWeight.w500,   fontSize: 15,  ),)
                      ]
                   )
