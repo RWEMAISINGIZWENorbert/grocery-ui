@@ -192,21 +192,6 @@ class MyHomePage extends StatelessWidget {
                             );
                           }
                           )
-                      // ListView.builder(
-                      //   scrollDirection: Axis.horizontal,
-                      //   itemCount: products.length,
-                      //   itemBuilder: (context, index){
-                      //     return Container(
-                      //       width: 400,
-                      //       height: MediaQuery.of(context).size.height * 0.2,
-                      //       margin: EdgeInsets.all(10),
-                      //       decoration: BoxDecoration(
-                      //         borderRadius: BorderRadius.circular(8),
-                      //         color: Colors.grey[200],
-                      //       ),
-                      //     );
-                      //   },
-                      //   ),
                       )
                 ],
               ),
@@ -217,20 +202,20 @@ class MyHomePage extends StatelessWidget {
       bottomNavigationBar: _bottomBar1(context),
     );
   }
-
-  BottomNavigationBar _bottomBar() {
-    return BottomNavigationBar(
-      currentIndex: 0,
-      onTap: (index){},
-      items: [
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-        BottomNavigationBarItem(icon: Icon(Icons.production_quantity_limits_sharp), label: 'Order'),
-        BottomNavigationBarItem(icon: Icon(Icons.car_crash), label: 'Cart'),
-        BottomNavigationBarItem(icon: Icon(Icons.dashboard), label: 'more'),
-      ],
-    );
-  }
 }
+
+  // BottomNavigationBar _bottomBar() {
+  //   return BottomNavigationBar(
+  //     currentIndex: 0,
+  //     onTap: (index){},
+  //     items: [
+  //       BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+  //       BottomNavigationBarItem(icon: Icon(Icons.production_quantity_limits_sharp), label: 'Order'),
+  //       BottomNavigationBarItem(icon: Icon(Icons.car_crash), label: 'Cart'),
+  //       BottomNavigationBarItem(icon: Icon(Icons.dashboard), label: 'more'),
+  //     ],
+  //   );
+  // }
 
 Container _bottomBar1(context){
   return Container(
