@@ -5,6 +5,7 @@ class ProductsModel {
   final double quantity;
   final double unityPrice;
   final String imageUrl;
+  final String category;
 
   ProductsModel({
     required this.name,
@@ -12,7 +13,8 @@ class ProductsModel {
     required this.calories,
     required this.quantity,
     required this.unityPrice,
-    required this.imageUrl
+    required this.imageUrl,
+    required this.category,
   });
 
   static List<ProductsModel> initProducts() {
@@ -24,7 +26,8 @@ class ProductsModel {
       calories: 12.00, 
       quantity: 5,
       imageUrl: 'https://raw.githubusercontent.com/RWEMAISINGIZWENorbert/Flutter_UI-Design/refs/heads/main/assets/grocery/apple.png',
-      unityPrice: 4.3
+      unityPrice: 4.3,
+      category: 'fruits',
       ));
     products.add(ProductsModel(
       name: 'Orange', 
@@ -32,7 +35,8 @@ class ProductsModel {
       calories: 12.00, 
       quantity: 10,
       unityPrice: 12.00,
-      imageUrl: 'https://raw.githubusercontent.com/RWEMAISINGIZWENorbert/Flutter_UI-Design/refs/heads/main/assets/grocery/orange.png'
+      imageUrl: 'https://raw.githubusercontent.com/RWEMAISINGIZWENorbert/Flutter_UI-Design/refs/heads/main/assets/grocery/orange.png',
+      category: 'vegetables'
       ));
     products.add(ProductsModel(
       name: 'melon', 
@@ -40,7 +44,8 @@ class ProductsModel {
       calories: 12.00, 
       quantity: 8,
       unityPrice: 14.00,
-      imageUrl:  'https://raw.githubusercontent.com/RWEMAISINGIZWENorbert/Flutter_UI-Design/refs/heads/main/assets/grocery/melon.png'
+      imageUrl:  'https://raw.githubusercontent.com/RWEMAISINGIZWENorbert/Flutter_UI-Design/refs/heads/main/assets/grocery/melon.png',
+      category: 'fast food'
       ));
     products.add(ProductsModel(
       name: 'potato', 
@@ -48,7 +53,8 @@ class ProductsModel {
       calories: 12.00, 
       quantity: 15,
       unityPrice: 8.00,
-      imageUrl: 'https://raw.githubusercontent.com/RWEMAISINGIZWENorbert/Flutter_UI-Design/refs/heads/main/assets/grocery/potato.png'
+      imageUrl: 'https://raw.githubusercontent.com/RWEMAISINGIZWENorbert/Flutter_UI-Design/refs/heads/main/assets/grocery/potato.png',
+      category: 'fast food',
       ));
 
     return products;
