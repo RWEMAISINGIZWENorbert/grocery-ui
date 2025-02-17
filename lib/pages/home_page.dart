@@ -114,7 +114,7 @@ class MyHomePage extends StatelessWidget {
                           itemBuilder: (context, index) {
                             return GestureDetector(
                               onTap: (){
-                                Navigator.pushNamed(context, '/item', arguments: '$index');
+                                Navigator.pushNamed(context, '/item', arguments: index);
                               },
                               child: Container(
                                 // height: MediaQuery.of(context).size.height * 0.5,

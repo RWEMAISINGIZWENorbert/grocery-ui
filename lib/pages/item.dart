@@ -9,8 +9,8 @@ class MyItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
      
-         final productId = ModalRoute.of(context)!.settings.arguments.toString();
-        //  List<ProductsModel> produv
+         final productId = ModalRoute.of(context)!.settings.arguments as int;
+         List<ProductsModel> products = ProductsModel.initProducts();
   
            print(productId);
     
@@ -44,7 +44,7 @@ class MyItem extends StatelessWidget {
             Center(
                 child: Container(
                   margin: EdgeInsets.only(top: 46),
-                  child: Image.network('https://raw.githubusercontent.com/RWEMAISINGIZWENorbert/Flutter_UI-Design/refs/heads/main/assets/grocery/apple.png',
+                  child: Image.network(products[productId].imageUrl,
                   width: 120,
                   height: 100, 
                   ),
@@ -57,7 +57,7 @@ class MyItem extends StatelessWidget {
                 children: [
                   RichText(text: TextSpan(
                      children: [
-                      TextSpan(text: 'Fresh Apple\n ', style: Theme.of(context).textTheme.displayMedium),
+                      TextSpan(text: '${products[productId].name}\n ', style: Theme.of(context).textTheme.displayMedium),
                       TextSpan(text: 'Available in stock', style:  GoogleFonts.poppins( color: Colors.grey[500],  fontWeight: FontWeight.w500,   fontSize: 15,  ),)
                      ]
                   )
@@ -81,7 +81,7 @@ class MyItem extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Text('2', style: Theme.of(context).textTheme.displaySmall,),
+                      Text('${products[productId].quantity}', style: Theme.of(context).textTheme.displaySmall,),
                         Container(
                         width: 28,
                         height: 28,
@@ -111,7 +111,7 @@ class MyItem extends StatelessWidget {
                 children: [
                   TextSpan(text: 'Product Description\n', style: Theme.of(context).textTheme.displayMedium),
                   TextSpan(
-                    text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui corrupti magnam, ratione aspernatur eveniet ab iure animi quasi perspiciatis error nam suscipit obcaecati veritatis eligendi voluptates tempora incidunt doloribus dolorum.', 
+                    text: products[productId].desc, 
                     style: GoogleFonts.poppins( color: Colors.grey[500],  fontWeight: FontWeight.w500,   fontSize: 15, ),),
                 ]
               ),
@@ -129,7 +129,7 @@ class MyItem extends StatelessWidget {
             RichText(
               text: TextSpan(
                 children:   <TextSpan>[
-                    TextSpan(text: '\$10.45',  style: GoogleFonts.poppins(
+                    TextSpan(text: '\$${products[productId].unityPrice}',  style: GoogleFonts.poppins(
                                                       color: Colors.white,
                                                       fontSize: 30,
                                                      fontWeight: FontWeight.w800
