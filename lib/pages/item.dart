@@ -1,5 +1,7 @@
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grocery_app/models/products_model.dart';
 
 class MyItem extends StatelessWidget {
   const MyItem({super.key});
@@ -7,8 +9,10 @@ class MyItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
      
-        //  final productId = ModalRoute.of(context)!.settings.arguments as String;
-
+         final productId = ModalRoute.of(context)!.settings.arguments.toString();
+        //  List<ProductsModel> produv
+  
+           print(productId);
     
     return Scaffold(
       body: Container(
