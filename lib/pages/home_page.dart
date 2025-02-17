@@ -19,7 +19,8 @@ class MyHomePage extends StatelessWidget {
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(30),
               bottomRight: Radius.circular(30),
-            )),
+            )
+            ),
         child: Column(
           children: [
             const SizedBox(height: 24),
@@ -68,7 +69,8 @@ class MyHomePage extends StatelessWidget {
                               category[index].name,
                               style: TextTheme.of(context).displaySmall,
                             ),
-                          )),
+                          ),
+                          ),
                 ),
               ),
             ),
@@ -110,78 +112,83 @@ class MyHomePage extends StatelessWidget {
                           ),
                           itemCount: products.length,
                           itemBuilder: (context, index) {
-                            return Container(
-                              // height: MediaQuery.of(context).size.height * 0.5,
-                              decoration: BoxDecoration(
-                                  color: Colors.grey[200],
-                                  borderRadius: BorderRadius.circular(16)),
-                              child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: <Widget>[
-                                    Center(
-                                      child: Image.network(
-                                        products[index].imageUrl,
-                                        fit: BoxFit.fitWidth,
-                                        width: 100,
-                                        height: 100,
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      height: 4,
-                                    ),
-                                    Container(
-                                        margin: EdgeInsets.only(left: 8),
-                                        child: Text(
-                                          products[index].name,
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .displayLarge,
-                                        )),
-                                    Container(
-                                        margin: EdgeInsets.only(left: 8),
-                                        child: Text(
-                                          "${products[index].calories} cal",
-                                          style: GoogleFonts.poppins(
-                                            color: Colors.grey[500],
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 15,
-                                          ),
-                                        )
+                            return GestureDetector(
+                              onTap: (){
+                                Navigator.pushNamed(context, '/item');
+                              },
+                              child: Container(
+                                // height: MediaQuery.of(context).size.height * 0.5,
+                                decoration: BoxDecoration(
+                                    color: Colors.grey[200],
+                                    borderRadius: BorderRadius.circular(16)),
+                                child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Center(
+                                        child: Image.network(
+                                          products[index].imageUrl,
+                                          fit: BoxFit.fitWidth,
+                                          width: 100,
+                                          height: 100,
                                         ),
-                                    Container(
-                                      margin: EdgeInsets.all(8),
-                                      child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          RichText(text: TextSpan(
-                                             children: <TextSpan>[
-                                                TextSpan(text:"\$${products[index].unityPrice}", style: GoogleFonts.poppins(
-                                                  color: Colors.amber,
-                                                  fontSize: 20,
-                                               fontWeight: FontWeight.bold
-                                          ),
-                                          ),  
-                                          TextSpan( text: '/kg', style: GoogleFonts.poppins(
-                                            color: Colors.grey[500],
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 15,
-                                          ),
-                                          ),
-                                             ]
-                                          )),
-                                          Container(
-                                            width: 36,
-                                            height: 36,
-                                            decoration: BoxDecoration(
-                                              color: Colors.amber,
-                                              borderRadius: BorderRadius.circular(5)
-                                            ),
-                                            child: Icon(Icons.add, color: Colors.white,),
-                                          )
-                                        ],
                                       ),
-                                    )    
-                                  ]),
+                                      const SizedBox(
+                                        height: 4,
+                                      ),
+                                      Container(
+                                          margin: EdgeInsets.only(left: 8),
+                                          child: Text(
+                                            products[index].name,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .displayLarge,
+                                          )),
+                                      Container(
+                                          margin: EdgeInsets.only(left: 8),
+                                          child: Text(
+                                            "${products[index].calories} cal",
+                                            style: GoogleFonts.poppins(
+                                              color: Colors.grey[500],
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 15,
+                                            ),
+                                          )
+                                          ),
+                                      Container(
+                                        margin: EdgeInsets.all(8),
+                                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            RichText(text: TextSpan(
+                                               children: <TextSpan>[
+                                                  TextSpan(text:"\$${products[index].unityPrice}", style: GoogleFonts.poppins(
+                                                    color: Colors.amber,
+                                                    fontSize: 20,
+                                                   fontWeight: FontWeight.bold
+                                            ),
+                                            ),  
+                                            TextSpan( text: '/kg', style: GoogleFonts.poppins(
+                                              color: Colors.grey[500],
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 15,
+                                            ),
+                                            ),
+                                               ]
+                                            )),
+                                            Container(
+                                              width: 36,
+                                              height: 36,
+                                              decoration: BoxDecoration(
+                                                color: Colors.amber,
+                                                borderRadius: BorderRadius.circular(5)
+                                              ),
+                                              child: Icon(Icons.add, color: Colors.white,),
+                                            )
+                                          ],
+                                        ),
+                                      )    
+                                    ]),
+                              ),
                             );
                           }
                           )
